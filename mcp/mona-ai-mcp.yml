@@ -1,0 +1,67 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.mona-ai.de/llms.txt (Wix Site MCP advertised in llms.txt; live tools/list verified)
+name: Mona AI Site MCP
+type: MCPServer
+status: live
+description: >-
+  Hosted Model Context Protocol (MCP) server automatically provided by the Wix
+  platform for the mona-ai.de website. It lets AI agents connect directly to
+  read live, current website content and act on behalf of a visitor (query site
+  data, discover products/services, book appointments, start a purchase) without
+  scraping. No authentication is required to connect; only public website
+  information is exposed.
+transport: streamable-http
+endpoint: https://www.mona-ai.de/_api/mcp
+authentication: none
+docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+platform: Wix Site MCP
+probe:
+  method: POST tools/list
+  status: 200
+  session: returns mcp-session-id
+  verified: '2026-07-20'
+tools:
+- name: GetBusinessDetails
+  description: Retrieves business and website details such as time zone, email address, phone number and address.
+  parameters: []
+- name: SearchInSite
+  description: Searches the website for information.
+  parameters:
+  - name: searchTerm
+    description: The search term to look for on the website.
+- name: SearchSiteApiDocs
+  description: Retrieves the API documentation for the Wix business solutions installed on this site and tells the AI client how to use those APIs. Use for querying products and services instead of SearchInSite.
+  parameters:
+  - name: searchTerm
+    description: The search term for the site's API documentation.
+- name: GenerateVisitorToken
+  description: Creates a new visitor session and retrieves a visitor access token for the site. Must be called before any CallWixSiteAPI request when no visitor token is available in context.
+  parameters: []
+- name: CallWixSiteAPI
+  description: Calls API methods on the site to perform actions on behalf of a visitor, such as querying site data, booking an appointment or starting a purchase.
+  parameters:
+  - name: visitorToken
+    description: Visitor access token. Use GenerateVisitorToken first if unavailable.
+  - name: url
+    description: Absolute URL of the API method to call (e.g. https://www.wixapis.com/...). Obtain with SearchSiteApiDocs.
+  - name: method
+    description: HTTP method to use for the API call.
+  - name: body
+    description: Request body as a valid JSON string.
+- name: ReadFullDocsArticle
+  description: Retrieves a full article from the Wix developer documentation portal.
+  parameters:
+  - name: articleUrl
+    description: URL of an article in the Wix developer documentation portal.
+- name: ReadFullDocsMethodSchema
+  description: Retrieves the full schema for a Wix API method. Should be called before invoking the method via CallWixSiteAPI.
+  parameters:
+  - name: articleUrl
+    description: URL of the reference article for the Wix API method.
+notes: >-
+  This is a platform-generic Wix Site MCP surface (identical tool set across all
+  Wix-hosted sites), scoped to public content of mona-ai.de. It is not a
+  bespoke Mona AI product API. Mona AI's own recruiting product runs behind a
+  login at agents.monaai.de / app.mona-ai.de and does not publish an OpenAPI,
+  SDK or developer portal.

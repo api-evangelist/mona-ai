@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: probed
+source: live HTTP probes of https://www.mona-ai.de/.well-known/*
+host: www.mona-ai.de
+type: WellKnown
+description: >-
+  Probe of standard .well-known discovery paths on the Mona AI website host.
+  The site is Wix-hosted; Wix returns HTTP 400 for these .well-known paths, so
+  none are published. A real /llms.txt IS served at the site root (captured in
+  llms/mona-ai-llms.txt) and advertises the Wix Site MCP endpoint.
+probes:
+- path: /.well-known/security.txt
+  status: 400
+  found: false
+  file: null
+- path: /.well-known/openid-configuration
+  status: 400
+  found: false
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 400
+  found: false
+  file: null
+- path: /.well-known/api-catalog
+  status: 400
+  found: false
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 400
+  found: false
+  file: null
+related:
+- path: /llms.txt
+  status: 200
+  found: true
+  file: ../llms/mona-ai-llms.txt

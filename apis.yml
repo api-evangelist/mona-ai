@@ -1,7 +1,34 @@
 aid: mona-ai
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mona-ai.png
 name: Mona Ai
-description: Mona Ai is a company surfaced as a portfolio company of earlybird and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 4
+  pass: local-v1
+description: >-
+  Mona AI GmbH (mona-ai.de) is a German AI recruiting-automation company backed
+  by Earlybird. Its platform combines AI agents and digital avatars to automate
+  recruiting and HR processes for staffing agencies and enterprises: 24/7
+  candidate outreach, automated pre-qualification and candidate-profile
+  generation, and "digital branch" structures — built to be fully GDPR- and
+  EU-AI-Act-compliant. Products include MONA Recruiting, MONA Recruiting Light,
+  MONA Agents, MONA Digital Branch, MONA Consulting and MONA ARS, an autonomous
+  prompt-driven recruiting system that sources, screens, schedules and reports
+  automatically. The website is Wix-hosted and exposes a Wix Site MCP endpoint
+  plus an llms.txt for AI-agent access; the recruiting product itself runs
+  behind a login and does not publish a public developer API, SDK or OpenAPI.
 url: https://raw.githubusercontent.com/api-evangelist/mona-ai/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,10 +38,44 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Recruiting
+- Human Resources
+- HR Tech
+- AI Agents
+- Automation
+- Germany
+- MCP
 apis: []
+common:
+- type: DomainSecurity
+  url: security/mona-ai-domain-security.yml
+- type: Website
+  url: https://www.mona-ai.de
+- type: Blog
+  url: https://www.mona-ai.de/blog
+- type: BlogRSS
+  url: https://www.mona-ai.de/blog-feed.xml
+- type: Pricing
+  url: https://www.mona-ai.de/pricing
+- type: Support
+  url: https://www.mona-ai.de/support
+- type: PrivacyPolicy
+  url: https://www.mona-ai.de/datenschutz
+- type: LegalNotice
+  url: https://www.mona-ai.de/impressum
+- type: Login
+  url: https://agents.monaai.de/login
+- type: LinkedIn
+  url: https://www.linkedin.com/company/mona-ai-gmbh
+- type: LLMsTxt
+  url: llms/mona-ai-llms.txt
+- type: MCPServer
+  url: mcp/mona-ai-mcp.yml
+- type: WellKnown
+  url: well-known/mona-ai-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

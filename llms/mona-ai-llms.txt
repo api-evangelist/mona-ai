@@ -1,0 +1,66 @@
+# MONA AI
+> Die Website von MONA AI bietet eine KI-gestützte Plattform zur Automatisierung von Recruiting- und HR-Prozessen für Personaldienstleister und Unternehmen. Durch den Einsatz von KI-Agenten und digitalen Avataren ermöglicht die Seite eine 24/7-Bewerberansprache, automatisierte Vorqualifizierung und die Erstellung von Bewerberprofilen, was die Effizienz steigert und den manuellen Aufwand reduziert. Zudem stellt die Plattform Funktionen für eine digitale Niederlassungsstruktur bereit und legt großen Wert auf DSGVO-Konformität sowie Datensicherheit. Interessierte Unternehmen können über die Seite Beratungstermine vereinbaren, um maßgeschneiderte Automatisierungslösungen für ihre spezifischen Herausforderungen zu finden.
+
+## Homepage link
+- [home](https://www.mona-ai.de/)
+
+## KI-Agenten-Zugriff
+
+Diese Website wird von Wix betrieben und unterstützt das Model Context Protocol (MCP)
+für den Zugriff durch KI-Agenten. KI-Agenten können sich direkt verbinden, um Live- und aktuelle Website-Inhalte abzurufen – kein Scraping erforderlich.
+
+- [**MCP-Endpoint der Website**](https://www.mona-ai.de/_api/mcp)
+- [**Wix MCP-Docs**](https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp)
+
+## Verfügbare MCP-Tools
+
+### GetBusinessDetails
+Ruft Geschäfts- und Website-Details wie Zeitzone, E-Mail-Adresse, Telefonnummer und Adresse ab.
+- Keine Parameter erforderlich.
+
+### SearchInSite
+Durchsucht die Website nach Informationen.
+- **searchTerm** – Der Suchbegriff auf der Website.
+
+### SearchSiteApiDocs
+Ruft die API-Dokumentation für die auf dieser Website installierten Wix-Unternehmenslösungen ab und informiert den KI-Client, wie die APIs verwendet werden. Verwende dieses Tool zum
+Abfragen von Produkten und Services (anstelle von SearchInSite).
+- **searchTerm** – Der Suchbegriff in der API-Dokumentation der Website.
+
+### GenerateVisitorToken
+Erstellt eine neue Besucher-Session und ruft ein Besucher-Zugriffstoken für die Website ab.
+Muss vor jeder CallWixSiteAPI-Anfrage aufgerufen werden, wenn kein Besucher-Token
+im Kontext verfügbar ist.
+- Keine Parameter erforderlich.
+
+### CallWixSiteAPI
+Ruft API-Methoden auf der Website auf, um Aktionen im Namen eines Besuchers auszuführen,
+wie das Abfragen von Website-Daten, das Buchen eines Termins oder das Starten eines Kaufs.
+- **visitorToken** – Besucher-Zugriffstoken. Verwende GenerateVisitorToken zuerst, falls nicht verfügbar.
+- **url** – Absolute URL der API-Methode, die aufgerufen werden soll (z. B. https://www.wixapis.com/...). Abrufen mit SearchSiteApiDocs.
+- **method** – HTTP-Methode, die für den API-Aufruf verwendet werden soll.
+- **body** – Anfragetext als gültige JSON-Zeichenfolge.
+
+### ReadFullDocsArticle
+Ruft einen vollständigen Artikel aus dem Wix-Entwickler-Dokumentationsportal ab.
+- **articleUrl** – URL eines Artikels im Wix-Entwickler-Dokumentationsportal.
+
+### ReadFullDocsMethodSchema
+Ruft das vollständige Schema für eine Wix API-Methode ab. Sollte vor dem
+Aufruf der eigentlichen Methode über CallWixSiteAPI aufgerufen werden.
+- **articleUrl** – URL des Referenzartikels für die Wix API-Methode.
+
+## Was Besucher über KI + MCP tun können
+
+- Unternehmensdetails abrufen (Kontaktangaben, Standort, Öffnungszeiten)
+- Produkte und Services im Angebot entdecken
+- Services buchen und Reservierungen vornehmen
+- Einen Kauf starten und zur Website weitergeleitet werden, um den Checkout abzuschließen
+- Fragen stellen und relevante Antworten erhalten, ohne die Website durchsuchen zu müssen
+
+## Hinweise
+
+- Keine Authentifizierung erforderlich, um sich mit dem MCP-Endpoint zu verbinden
+- Nur öffentliche Informationen, die auf der Website zugänglich sind, sind verfügbar
+- Content ist immer live und aktuell
+- Um Tool-Updates zu erhalten, implementiere einen Tools/Listen-Aufruf nach Erhalt einer Tool-Update-Benachrichtigung
