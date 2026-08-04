@@ -2,10 +2,17 @@
   "repo": "mona-ai",
   "feeds": [
     {
+      "source": "https://www.mona-ai.de/blog-feed.xml",
+      "feed_url": "https://www.mona-ai.de/blog-feed.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://www.mona-ai.de",
       "feed_url": "https://www.mona-ai.de/blog-feed.xml",
       "title": "",
-      "saved": 2,
+      "saved": 0,
       "method": "discovered"
     },
     {
@@ -16,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 2,
-  "fetched": "2026-07-25T15:00:33Z"
+  "post_count": 20,
+  "fetched": "2026-08-01T15:49:00Z"
 }

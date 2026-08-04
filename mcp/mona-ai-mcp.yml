@@ -3,7 +3,8 @@ method: searched
 source: https://www.mona-ai.de/llms.txt (Wix Site MCP advertised in llms.txt; live tools/list verified)
 name: Mona AI Site MCP
 type: MCPServer
-status: live
+status: published
+status_raw: live
 description: >-
   Hosted Model Context Protocol (MCP) server automatically provided by the Wix
   platform for the mona-ai.de website. It lets AI agents connect directly to
