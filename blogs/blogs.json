@@ -5,7 +5,7 @@
       "source": "https://www.mona-ai.de/blog-feed.xml",
       "feed_url": "https://www.mona-ai.de/blog-feed.xml",
       "title": "",
-      "saved": 0,
+      "saved": 11,
       "method": "feed"
     },
     {
@@ -23,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 24,
-  "fetched": "2026-08-06T14:08:46Z"
+  "post_count": 35,
+  "fetched": "2026-08-15T12:11:08Z"
 }
